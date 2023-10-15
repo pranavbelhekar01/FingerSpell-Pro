@@ -1,11 +1,8 @@
-## Google - ASL Fingerspelling Recognition 1st place solution
+## ASL Fingerspelling detection
 
-This repository contains the codebase to reproduce the winning solution to the Google - ASL Fingerspelling Recognition competition on kaggle. 
 
-Competiton website: [link](https://www.kaggle.com/competitions/asl-fingerspelling).  
-1st place solution summary: [link](https://www.kaggle.com/competitions/asl-fingerspelling/discussion/434485). 
 
-Our solution is based on a single encoder-decoder architecture. The encoder is a significantly improved version of Squeezeformer, where the feature extraction was adapted to handle mediapipe landmarks instead of speech signals. The decoder is a simple 2-layer transformer. We additionally predicted a confidence score to identify corrupted examples which can be useful for post-processing. We also introduced efficient and creative augmentations to regularize the model, where the most important ones were CutMix, FingerDropout and TimeStretch, DecoderInput Masking. We used pytorch for developing and training our models and then manually translated model architecture and ported weights to tensorflow from which we exported to tf-lite.
+ASL Fingerspelling detection on a single encoder-decoder architecture. The encoder is a significantly improved version of Squeezeformer, where the feature extraction was adapted to handle mediapipe landmarks instead of speech signals. The decoder is a simple 2-layer transformer. We additionally predicted a confidence score to identify corrupted examples which can be useful for post-processing. We also introduced efficient and creative augmentations to regularize the model, where the most important ones were CutMix, FingerDropout and TimeStretch, DecoderInput Masking. We used pytorch for developing and training our models and then manually translated model architecture and ported weights to tensorflow from which we exported to tf-lite.
 
 ![](architecture_overview.png)
 
@@ -110,9 +107,7 @@ Check out the SqueezeFormer [paper](https://arxiv.org/pdf/2206.00888.pdf) for mo
 
 We copied and adapted the TFSpeech2TextDecoder from https://github.com/huggingface/transformers/ to support caching and used components related to LLama Attention.
 
-## Paper 
-
-TBD
-      
+## Note:
+This project is entirely inspired by the work of <a href='https://github.com/ChristofHenkel'>ChristofHenkel</a>. The code is an exact copy of his code. His project is a part of the Kaggle competition that you will find <a href='https://www.kaggle.com/competitions/asl-fingerspelling'>here</a>. I admire <a href='https://github.com/ChristofHenkel'>ChristofHenkel</a> and his contribution to the Machine Learning world.
       
       
